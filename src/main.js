@@ -145,16 +145,16 @@ const showFadeDown = document.querySelectorAll('.show-fade-down');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            if(entry.target.classList.contains('show-fade-left')) {
+            if (entry.target.classList.contains('show-fade-left')) {
                 entry.target.classList.add('show-left');
             }
-            if(entry.target.classList.contains('show-fade-right')) {
+            if (entry.target.classList.contains('show-fade-right')) {
                 entry.target.classList.add('show-right');
             }
-            if(entry.target.classList.contains('show-fade-up')) {
+            if (entry.target.classList.contains('show-fade-up')) {
                 entry.target.classList.add('show-up');
             }
-            if(entry.target.classList.contains('show-fade-down')) {
+            if (entry.target.classList.contains('show-fade-down')) {
                 entry.target.classList.add('show-down');
             }
         }
