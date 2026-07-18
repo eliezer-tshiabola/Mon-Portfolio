@@ -5,100 +5,155 @@ const activeLinks = document.querySelectorAll('nav .active-link');
 const mobileActiveLinks = document.querySelectorAll('.mobile-active-link');
 const pageSection = document.querySelectorAll('.page-section');
 
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
+// window.addEventListener('scroll', () => {
+//     const scrollPosition = window.scrollY;
 
-    if (!pageSection || pageSection.length === 0) return;
+//     if (!pageSection || pageSection.length === 0) return;
 
-    pageSection.forEach((pages, index) => {
-        const sectionTop = pages.offsetTop;
-        const sectionHeight = pages.offsetHeight;
+//     pageSection.forEach((pages, index) => {
+//         const sectionTop = pages.offsetTop;
+//         const sectionHeight = pages.offsetHeight;
 
-        const inView = (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight);
+//         const inView = (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight);
 
-        // Ensure corresponding nav items exist
-        const topLink = activeLinks && activeLinks[index];
-        const topMobileLink = mobileActiveLinks && mobileActiveLinks[index];
+//         // Ensure corresponding nav items exist
+//         const topLink = activeLinks && activeLinks[index];
+//         const topMobileLink = mobileActiveLinks && mobileActiveLinks[index];
 
-        if (inView) {
-            activeLinks.forEach(navLinks => {
-                navLinks.classList.remove('text-white');
-                navLinks.classList.remove('bg-indigo-600');
+//         if (inView) {
+//             activeLinks.forEach(navLinks => {
+//                 navLinks.classList.remove('text-white');
+//                 navLinks.classList.remove('bg-indigo-600');
+//             });
+
+//             mobileActiveLinks.forEach(navLinks => {
+//                 navLinks.classList.remove('text-white');
+//                 navLinks.classList.remove('bg-indigo-600');
+//             });
+
+//             if (topLink) {
+//                 topLink.classList.remove('text-indigo-900');
+//                 topLink.classList.remove('dark:text-indigo-600');
+//                 topLink.classList.remove('hover:bg-indigo-50');
+//                 topLink.classList.remove('dark:hover:bg-slate-900');
+//                 topLink.classList.remove('hover:border-indigo-100');
+//                 topLink.classList.remove('dark:hover:border-dark-header-border');
+//                 topLink.classList.add('bg-indigo-600');
+//                 topLink.classList.add('text-white');
+//             }
+
+//             if (topMobileLink) {
+//                 topMobileLink.classList.remove('text-indigo-900');
+//                 topMobileLink.classList.remove('dark:text-indigo-600');
+//                 topMobileLink.classList.remove('hover:bg-indigo-50');
+//                 topMobileLink.classList.remove('dark:hover:bg-slate-900');
+//                 topMobileLink.classList.remove('hover:border-indigo-100');
+//                 topMobileLink.classList.remove('dark:hover:border-dark-header-border');
+//                 topMobileLink.classList.add('bg-indigo-600');
+//                 topMobileLink.classList.add('text-white');
+//             }
+//         } else {
+//             // Reset to first link as fallback if available
+//             if (activeLinks && activeLinks[0]) {
+//                 activeLinks[0].classList.add('text-white');
+//                 activeLinks[0].classList.add('bg-indigo-600');
+//                 activeLinks[0].classList.remove('dark:text-indigo-600');
+//                 activeLinks[0].classList.remove('hover:bg-indigo-50');
+//                 activeLinks[0].classList.remove('dark:hover:bg-slate-900');
+//                 activeLinks[0].classList.remove('hover:border-indigo-100');
+//                 activeLinks[0].classList.remove('dark:hover:border-dark-header-border');
+//             }
+
+//             if (mobileActiveLinks && mobileActiveLinks[0]) {
+//                 mobileActiveLinks[0].classList.add('text-white');
+//                 mobileActiveLinks[0].classList.add('bg-indigo-600');
+//                 mobileActiveLinks[0].classList.remove('dark:text-indigo-600');
+//                 mobileActiveLinks[0].classList.remove('hover:bg-indigo-50');
+//                 mobileActiveLinks[0].classList.remove('dark:hover:bg-slate-900');
+//                 mobileActiveLinks[0].classList.remove('hover:border-indigo-100');
+//                 mobileActiveLinks[0].classList.remove('dark:hover:border-dark-header-border');
+//             }
+
+//             if (topLink) {
+//                 topLink.classList.add('text-indigo-900');
+//                 topLink.classList.add('dark:text-indigo-600');
+//                 topLink.classList.add('hover:bg-indigo-50');
+//                 topLink.classList.add('dark:hover:bg-slate-900');
+//                 topLink.classList.add('hover:border-indigo-100');
+//                 topLink.classList.add('dark:hover:border-dark-header-border');
+//                 topLink.classList.remove('bg-indigo-600');
+//                 topLink.classList.remove('text-white');
+//             }
+
+//             if (topMobileLink) {
+//                 topMobileLink.classList.add('text-indigo-900');
+//                 topMobileLink.classList.add('dark:text-indigo-600');
+//                 topMobileLink.classList.add('hover:bg-indigo-50');
+//                 topMobileLink.classList.add('dark:hover:bg-slate-900');
+//                 topMobileLink.classList.add('hover:border-indigo-100');
+//                 topMobileLink.classList.add('dark:hover:border-dark-header-border');
+//                 topMobileLink.classList.remove('bg-indigo-600');
+//                 topMobileLink.classList.remove('text-white');
+//             }
+//         }
+//     });
+// });
+
+let sectionObserver = new IntersectionObserver((sectionEntries) => {
+    sectionEntries.forEach(sectionEntry => {
+        if (sectionEntry.isIntersecting > 0.5) {
+
+            activeLinks.forEach(link => {
+                link.classList.add('text-indigo-900');
+                link.classList.add('dark:text-indigo-600');
+                link.classList.add('hover:bg-indigo-50');
+                link.classList.add('dark:hover:bg-slate-900');
+                link.classList.add('hover:border-indigo-100');
+                link.classList.add('dark:hover:border-dark-header-border');
+                link.classList.remove('bg-indigo-600');
+                link.classList.remove('text-white');
             });
 
-            mobileActiveLinks.forEach(navLinks => {
-                navLinks.classList.remove('text-white');
-                navLinks.classList.remove('bg-indigo-600');
+            mobileActiveLinks.forEach(mobileLink => {
+                mobileLink.classList.add('text-indigo-900');
+                mobileLink.classList.add('dark:text-indigo-600');
+                mobileLink.classList.add('hover:bg-indigo-50');
+                mobileLink.classList.add('dark:hover:bg-slate-900');
+                mobileLink.classList.add('hover:border-indigo-100');
+                mobileLink.classList.add('dark:hover:border-dark-header-border');
+                mobileLink.classList.remove('bg-indigo-600');
+                mobileLink.classList.remove('text-white');
             });
 
-            if (topLink) {
-                topLink.classList.remove('text-indigo-900');
-                topLink.classList.remove('dark:text-indigo-600');
-                topLink.classList.remove('hover:bg-indigo-50');
-                topLink.classList.remove('dark:hover:bg-slate-900');
-                topLink.classList.remove('hover:border-indigo-100');
-                topLink.classList.remove('dark:hover:border-dark-header-border');
-                topLink.classList.add('bg-indigo-600');
-                topLink.classList.add('text-white');
-            }
+            const curentLink = document.querySelector(`nav .active-link[href="#${sectionEntry.target.id}"]`);
+            const curentMobileLink = document.querySelector(`.mobile-active-link[href="#${sectionEntry.target.id}"]`);
 
-            if (topMobileLink) {
-                topMobileLink.classList.remove('text-indigo-900');
-                topMobileLink.classList.remove('dark:text-indigo-600');
-                topMobileLink.classList.remove('hover:bg-indigo-50');
-                topMobileLink.classList.remove('dark:hover:bg-slate-900');
-                topMobileLink.classList.remove('hover:border-indigo-100');
-                topMobileLink.classList.remove('dark:hover:border-dark-header-border');
-                topMobileLink.classList.add('bg-indigo-600');
-                topMobileLink.classList.add('text-white');
-            }
-        } else {
-            // Reset to first link as fallback if available
-            if (activeLinks && activeLinks[0]) {
-                activeLinks[0].classList.add('text-white');
-                activeLinks[0].classList.add('bg-indigo-600');
-                activeLinks[0].classList.remove('dark:text-indigo-600');
-                activeLinks[0].classList.remove('hover:bg-indigo-50');
-                activeLinks[0].classList.remove('dark:hover:bg-slate-900');
-                activeLinks[0].classList.remove('hover:border-indigo-100');
-                activeLinks[0].classList.remove('dark:hover:border-dark-header-border');
-            }
+            curentLink.classList.remove('text-indigo-900');
+            curentLink.classList.remove('dark:text-indigo-600');
+            curentLink.classList.remove('hover:bg-indigo-50');
+            curentLink.classList.remove('dark:hover:bg-slate-900');
+            curentLink.classList.remove('hover:border-indigo-100');
+            curentLink.classList.remove('dark:hover:border-dark-header-border');
+            curentLink.classList.add('bg-indigo-600');
+            curentLink.classList.add('text-white');
 
-            if (mobileActiveLinks && mobileActiveLinks[0]) {
-                mobileActiveLinks[0].classList.add('text-white');
-                mobileActiveLinks[0].classList.add('bg-indigo-600');
-                mobileActiveLinks[0].classList.remove('dark:text-indigo-600');
-                mobileActiveLinks[0].classList.remove('hover:bg-indigo-50');
-                mobileActiveLinks[0].classList.remove('dark:hover:bg-slate-900');
-                mobileActiveLinks[0].classList.remove('hover:border-indigo-100');
-                mobileActiveLinks[0].classList.remove('dark:hover:border-dark-header-border');
-            }
-
-            if (topLink) {
-                topLink.classList.add('text-indigo-900');
-                topLink.classList.add('dark:text-indigo-600');
-                topLink.classList.add('hover:bg-indigo-50');
-                topLink.classList.add('dark:hover:bg-slate-900');
-                topLink.classList.add('hover:border-indigo-100');
-                topLink.classList.add('dark:hover:border-dark-header-border');
-                topLink.classList.remove('bg-indigo-600');
-                topLink.classList.remove('text-white');
-            }
-
-            if (topMobileLink) {
-                topMobileLink.classList.add('text-indigo-900');
-                topMobileLink.classList.add('dark:text-indigo-600');
-                topMobileLink.classList.add('hover:bg-indigo-50');
-                topMobileLink.classList.add('dark:hover:bg-slate-900');
-                topMobileLink.classList.add('hover:border-indigo-100');
-                topMobileLink.classList.add('dark:hover:border-dark-header-border');
-                topMobileLink.classList.remove('bg-indigo-600');
-                topMobileLink.classList.remove('text-white');
-            }
+            curentMobileLink.classList.remove('text-indigo-900');
+            curentMobileLink.classList.remove('dark:text-indigo-600');
+            curentMobileLink.classList.remove('hover:bg-indigo-50');
+            curentMobileLink.classList.remove('dark:hover:bg-slate-900');
+            curentMobileLink.classList.remove('hover:border-indigo-100');
+            curentMobileLink.classList.remove('dark:hover:border-dark-header-border');
+            curentMobileLink.classList.add('bg-indigo-600');
+            curentMobileLink.classList.add('text-white');
         }
     });
+}, {
+    threshold: .5
 });
 
+pageSection.forEach((pages) => {
+    sectionObserver.observe(pages);
+});
 
 // ======= DARK BUTTON ======== //
 
@@ -203,6 +258,8 @@ const observer = new IntersectionObserver(entries => {
             }
         }
     });
+}, {
+    threshold: .05
 });
 
 [...showFadeLeft].forEach(scrollLeft => {
