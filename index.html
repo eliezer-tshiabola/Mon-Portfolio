@@ -19,10 +19,12 @@
   <title>Eliezer Tshiabola</title>
 </head>
 
-<body class="bg-grid font-light dark:font-extralight text-texte-secondaire dark:text-dark-texte-secondaire font-sora">
+<body
+  class="bg-grid relative font-light dark:font-extralight text-texte-secondaire dark:text-dark-texte-secondaire font-sora">
   <a class="sr-only focus:not-sr-only absolute left-4 top-4 z-50 bg-indigo-600 text-white px-3 py-2 rounded-md"
     href="#main">Aller au contenu</a>
 
+  <!-- ====== LE MENU MOBILE ====== -->
   <div id="bg-mobile-menu"
     class="fixed flex h-screen justify-center w-full lg:hidden backdrop-blur-0 -z-10 transition-transform duration-500">
     <div id="mobile-menu"
@@ -58,7 +60,94 @@
     </div>
   </div>
 
-  <!-- ==== ZONE HERO + HEADER ==== -->
+  <!-- =========== LES CARTES POPUP DES CARTES DE LA SECTION COMPETENCES ========== -->
+
+  <!-- ======= Pour la compétence en HTML ========= -->
+  <div
+    class="grid fixed place-items-center h-screen w-full bg-slate-400/70 dark:bg-dark-card/40 backdrop-blur-sm opacity-0 -z-20 competence-popup-card transition duration-300">
+
+    <div
+      class="flex flex-col gap-4 p-4 bg-card dark:bg-dark-card border border-slate-600/50 dark:border-dark-header-border rounded-3xl w-[clamp(20rem,50%,30rem)] sm:w-[clamp(30rem,50%,40rem)] h-fit animate-fade-out opacity-0 -z-20 competence-popup-container">
+      <div class="flex gap-2 items-center">
+        <div class="flex flex-wrap w-full xs:flex-nowrap xs:justify-between gap-2 xs:gap-0">
+          <div class="flex items-center gap-2">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-xl bg-linear-to-r from-indigo-600 to-indigo-500 transition shadow-[0_10px_60px_#4f46e5]/40 group-hover:shadow-[0_20px_60px_#4f46e5]/50 group-hover:scale-110 group-active:shadow-[0_20px_60px_#4f46e5]/50 group-active:scale-110 text-xl text-dark-title duration-150 md:duration-300 overflow-hidden">
+              <i class="bi bi-code-slash"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-title dark:text-dark-title mt-1">HTML</h4>
+          </div>
+
+          <div>
+            <span
+              class="flex justify-center mt-2 items-center rounded-full bg-indigo-100 text-indigo-700 px-3 py-1.5 text-xs font-semibold dark:bg-indigo-900/50 dark:text-indigo-200">Structure
+              sémantique & SEO</span>
+          </div>
+        </div>
+
+        <div class="group relative">
+          <div
+            class="absolute -top-8 -left-4 bg-indigo-50 dark:bg-dark-card border border-indigo-400/50 dark:border-dark-header-border rounded-full px-3 py-1.5 text-xs font-semibold text-indigo-700 opacity-0 group-hover:opacity-100 -z-50 group-hover:z-20 transition duration-300">
+            <span>Fermer</span>
+          </div>
+          <button
+            class="flex justify-center items-center w-10 h-10 rounded-xl text-lg text-title dark:text-dark-title group-hover:bg-indigo-50 active:bg-indigo-50 dark:group-hover:bg-slate-800 dark:active:bg-slate-800 duration-150 md:duration-300 overflow-hidden cursor-pointer close-popup-card">
+            <i class="fa-solid fa-x"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="h-px w-full bg-slate-400/70 dark:bg-slate-600"></div>
+
+      <div>
+        <h5 class="text-base font-semibold text-title dark:text-dark-title underline underline-offset-2">
+          Description détaillée</h5>
+        <p class="text-sm mt-1">Structure sémantique,
+          accessibilité et optimisation pour le référencement (SEO). Code claire organisé et facile à
+          maintenir.</p>
+      </div>
+
+      <div class="h-px w-full bg-slate-400/70 dark:bg-slate-600"></div>
+
+      <div class="flex flex-col gap-2">
+        <div class="flex justify-between">
+          <h5 class="text-base font-semibold text-title dark:text-dark-title">
+            Niveau actuel</h5>
+          <span class="text-base font-semibold text-title dark:text-dark-title">85%</span>
+        </div>
+        <div>
+          <div class="w-full h-2 bg-gray-300 dark:bg-dark-header-border rounded-full">
+            <div class="h-2 bg-linear-to-r from-indigo-600 to-indigo-500 rounded-full w-[85%]"></div>
+          </div>
+        </div>
+
+        <div class="flex justify-between">
+          <span class="text-base font-semibold text-title dark:text-dark-title">Débutant</span>
+          <span class="text-base font-semibold text-title dark:text-dark-title">Intermédiaire</span>
+          <span class="text-base font-semibold text-title dark:text-dark-title">Solide</span>
+        </div>
+      </div>
+
+      <div class="h-px w-full bg-slate-400/70 dark:bg-slate-600"></div>
+
+      <div>
+        <h5 class="text-base font-semibold text-title dark:text-dark-title">
+          Niveau actuel</h5>
+        <div class="flex flex-wrap gap-2 mt-2">
+          <span
+            class="flex justify-center items-center rounded-full bg-indigo-100 text-indigo-700 px-3 py-1.5 text-xs font-semibold dark:bg-indigo-900/50 dark:text-indigo-200">HTML
+            sémantique</span>
+          <span
+            class="flex justify-center items-center rounded-full bg-indigo-100 text-violet-700 px-3 py-1.5 text-xs font-semibold dark:bg-violet-900/50 dark:text-violet-200">SEO
+            de base</span>
+          <span
+            class="flex justify-center items-center rounded-full bg-indigo-100 text-green-700 px-3 py-1.5 text-xs font-semibold dark:bg-green-900/50 dark:text-indigo-200">Accessibilité</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==== LE HEADER ==== -->
   <header id="home">
     <nav
       class="fixed left-[clamp(0.1rem,6vw,7rem)] md:left-[clamp(0.5rem,6vw,7rem)] right-[clamp(0.1rem,6vw,7rem)] md:right-[clamp(0.5rem,6vw,7rem)] lg:right-[clamp(0.5rem,8vw,7rem)] lg:left-[clamp(0.5rem,8vw,7rem)] top-3 xs:top-4 sm:top-6 lg:top-4.5 z-50 animate-fade-down">
@@ -76,6 +165,7 @@
             Tshiabola</span>
         </a>
 
+        <!-- ======= LES LIENS DE LA BARRE DE NAVIGATION ======= -->
         <ul
           class="hidden lg:flex justify-center items-center gap-2 border border-gray-300 dark:border-dark-header-border rounded-xl px-4 py-1.5 z-10">
           <li><a href="#home"
@@ -98,6 +188,7 @@
           </li>
         </ul>
 
+        <!-- ======= LE BOUTON DE CHANGEMENT DE THÈME ET DU MENU MOBILE ======= -->
         <div class="flex-center gap-1.5 z-10">
           <div id="dark-button" role="button" tabindex="0" aria-pressed="false" aria-label="Basculer le thème sombre"
             class="flex justify-center items-center border border-gray-300 dark:border-dark-header-border rounded-xl px-2.5 py-2.5 xs:px-3 xs:py-2.5 text-base text-slate-900 dark:text-dark-title bg-indigo-50 dark:bg-slate-900 hover:bg-transparent hover:-translate-y-0.5 duration-300 cursor-pointer">
@@ -113,7 +204,9 @@
     </nav>
   </header>
 
+  <!-- ======= LE MAIN ======= -->
   <main class="flex-1 pt-18 xs:pt-22 sm:pt-24 md:pt-26 bottom-0" style="opacity: 1; transform: none;">
+    <!-- ======= LA SECTION D'ACCUEIL (la zone hero) ======= -->
     <section id="home" class="w-full h-full relative page-section overflow-hidden bg-gray-50/30 dark:bg-slate-900/30">
       <div
         class="absolute top-0 -left-6 bottom-0 w-1/2 h-full bg-linear-to-br from-indigo-400/30 dark:from-indigo-500/20 dark:to-slate-900 to-white rounded-full blur-2xl -z-1 opacity-30 sm:opacity-50">
@@ -148,7 +241,7 @@
                 class="bg-principal hover:bg-hover-principal duration-200 px-3.5 py-3 rounded-2xl text-dark-title flex-center gap-2 cursor-pointer active:scale-95"><span
                   class="flex-center gap-1"><i class="fa-regular fa-folder-open"></i>Voir mes projets</span> <ion-icon
                   name="chevron-forward-outline"></ion-icon></a>
-              <a href="./public/resume.pdf" download aria-label="Télécharger le CV" role="link"
+              <a href="./resume.pdf" download="resume.pdf" aria-label="Télécharger le CV" role="link"
                 class="px-3.5 py-3 rounded-2xl text-title bg-card dark:bg-dark-card dark:text-dark-title flex-center gap-2 border border-texte-secondaire cursor-pointer active:scale-95"><i
                   class="bi bi-download"></i> Télécharger mon CV</a>
             </div>
@@ -193,6 +286,7 @@
       </div>
     </section>
 
+    <!-- ======= LA SECTION À PROPOS =======  -->
     <section id="about" class="w-full h-full overflow-hidden relative page-section">
       <div
         class="relative px-[clamp(0.1rem,6vw,7rem)] md:px-[clamp(0.5rem,6vw,7rem)] lg:px-[clamp(0.5rem,8vw,7rem)] py-10 w-full h-full z-10">
@@ -422,47 +516,66 @@
 
     <section id="competence"
       class="w-full h-full overflow-hidden relative bg-gray-50/50 dark:bg-slate-900/50 page-section">
+
+
       <div
         class="relative px-[clamp(0.1rem,6vw,7rem)] md:px-[clamp(0.5rem,6vw,7rem)] lg:px-[clamp(0.5rem,8vw,7rem)] py-10 w-full h-full z-10">
         <div class="flex flex-col gap-6">
           <div class="flex flex-col gap-2 sm:gap-4 show-fade-right">
-            <span class="uppercase text-sm font-semibold text-principal">COMPÉTENCES</span>
+            <span class="uppercase text-sm font-semibold text-principal">MES COMPÉTENCES</span>
             <h3
               class="text-[clamp(1.3rem,4vw,2rem)] sm:text-[clamp(1.5rem,4vw,2.5rem)] xl:w-8/12 font-semibold lg:leading-12 text-title dark:text-dark-title">
-              Les compétences clés qui donnent vie à mes interfaces web</h3>
-            <p class="text-sm sm:text-base text-justify 2md:w-8/12">HTML, CSS, Tailwind CSS et JavaScript sont au cœur
-              de mon workflow. J'utilise ces technologies pour créer des expériences accessibles, responsives et
-              dynamiques.</p>
+              Les technologies que j'utilise pour donner vie à mes interfaces web</h3>
+            <p class="text-sm sm:text-base text-justify 2md:w-8/12">Chaque technologie que j'apprends renforce ma
+              capacité à créer des interfaces web modernes, responsive et dynamiques.</p>
           </div>
 
+          <!-- ======= LES CARTES COMPETENCES ======= -->
           <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-            <article
-              class="group show-fade-right overflow-hidden rounded-3xl border border-gray-300 dark:border-dark-header-border bg-card dark:bg-dark-card p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition duration-150 md:duration-300 hover:-translate-y-2 active:-translate-y-2 hover:shadow-[0_25px_90px_#4f46e5]/10 active:shadow-[0_25px_90px_#4f46e5]/10">
+
+            <article class="relative group">
+
               <div
-                class="flex items-center justify-center w-12 h-12 rounded-2xl bg-linear-to-r from-indigo-600 to-indigo-500 mb-5 transition shadow-[0_10px_60px_#4f46e5]/40 group-hover:shadow-[0_20px_60px_#4f46e5]/50 group-hover:scale-110 group-active:shadow-[0_20px_60px_#4f46e5]/50 group-active:scale-110 text-xl text-dark-title duration-150 md:duration-300 overflow-hidden">
-                <i class="bi bi-code-slash"></i>
+                class="relative w-full h-full show-fade-right overflow-hidden rounded-3xl border border-gray-300 dark:border-dark-header-border bg-card dark:bg-dark-card p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition duration-150 md:duration-300 group-hover:-translate-y-2 group-active:-translate-y-2 shadow-[0_25px_90px_#4f46e5]/40 dark:group-hover:shadow-[0_25px_90px_#4f46e5]/20 dark:group-active:shadow-[0_25px_90px_#4f46e5]/20">
+                <div
+                  class="flex items-center justify-center w-12 h-12 rounded-2xl bg-linear-to-r from-indigo-600 to-indigo-500 mb-5 transition shadow-[0_10px_60px_#4f46e5]/40 group-hover:shadow-[0_20px_60px_#4f46e5]/50 group-hover:scale-110 group-active:shadow-[0_20px_60px_#4f46e5]/50 group-active:scale-110 text-xl  text-dark-title duration-150 md:duration-300 overflow-hidden">
+                  <i class="bi bi-code-slash"></i>
+                </div>
+                <h4 class="text-xl font-semibold text-title dark:text-dark-title mb-2">HTML</h4>
+                <p class="text-sm text-texte-secondaire dark:text-dark-texte-secondaire">Structure sémantique,
+                  accessibilité et optimisation pour le référencement (SEO). Code claire organisé et facile à maintenir.
+                </p>
+                <span
+                  class="mt-5 inline-flex rounded-full bg-indigo-100 text-indigo-700 px-3 py-1 text-xs font-semibold dark:bg-indigo-900/30 dark:text-indigo-200">Structure
+                  sémantique & SEO</span>
+                
+                <button class="mt-5 hover:underline hover:underline-offset-2 cursor-pointer text-sm open-popup-card">Voir les détails</button>
               </div>
-              <h4 class="text-xl font-semibold text-title dark:text-dark-title mb-2">HTML</h4>
-              <p class="text-sm text-texte-secondaire dark:text-dark-texte-secondaire">Structure sémantique,
-                accessibilité et optimisation SEO pour des pages bien construites.</p>
-              <span
-                class="mt-5 inline-flex rounded-full bg-indigo-100 text-indigo-700 px-3 py-1 text-xs font-semibold dark:bg-indigo-900/30 dark:text-indigo-200">100%
-                maîtrisé</span>
             </article>
 
-            <article
-              class="group show-fade-left overflow-hidden rounded-3xl border border-gray-300 dark:border-dark-header-border bg-card dark:bg-dark-card p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition duration-150 md:duration-300 hover:-translate-y-2 active:-translate-y-2 hover:shadow-[0_25px_90px_#4f46e5]/10 active:shadow-[0_25px_90px_#4f46e5]/10">
+            <article class="relative group">
+
               <div
-                class="flex items-center justify-center w-12 h-12 rounded-2xl bg-linear-to-r from-indigo-600 to-indigo-500 mb-5 transition shadow-[0_10px_60px_#4f46e5]/40 group-hover:shadow-[0_20px_60px_#4f46e5]/50 group-hover:scale-110 group-active:shadow-[0_20px_60px_#4f46e5]/50 group-active:scale-110 text-xl text-dark-title duration-150 md:duration-300 overflow-hidden">
-                <i class="fa-brands fa-css3-alt"></i>
+                class="absolute flex flex-col gap-2 p-4 animate-none group-hover:animate-card-fade-right -top-50 -left-25 h-full w-[200%] bg-card/60 dark:bg-dark-card/60 backdrop-blur-md border border-gray-300 dark:border-dark-header-border opacity-0 group-hover:opacity-100 -z-10 group-hover:z-20 group-active:opacity-100 rounded-3xl shadow-[0_25px_90px_#4f46e5]/20">
               </div>
-              <h4 class="text-xl font-semibold text-title dark:text-dark-title mb-2">CSS</h4>
-              <p class="text-sm text-texte-secondaire dark:text-dark-texte-secondaire">Design responsive, animations
-                fluides et interfaces modernes qui respectent l’expérience utilisateur.</p>
-              <span
-                class="mt-5 inline-flex rounded-full bg-indigo-100 text-indigo-700 px-3 py-1 text-xs font-semibold dark:bg-indigo-900/30 dark:text-indigo-200">UI
-                professionnelle</span>
+
+              <div
+                class="relative w-full h-full show-fade-right overflow-hidden rounded-3xl border border-gray-300 dark:border-dark-header-border bg-card dark:bg-dark-card p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition duration-150 md:duration-300 group-hover:-translate-y-2 group-active:-translate-y-2 shadow-[0_25px_90px_#4f46e5]/40 dark:group-hover:shadow-[0_25px_90px_#4f46e5]/20 dark:group-active:shadow-[0_25px_90px_#4f46e5]/20">
+                <div
+                  class="flex items-center justify-center w-12 h-12 rounded-2xl bg-linear-to-r from-indigo-600 to-indigo-500 mb-5 transition shadow-[0_10px_60px_#4f46e5]/40 group-hover:shadow-[0_20px_60px_#4f46e5]/50 group-hover:scale-110 group-active:shadow-[0_20px_60px_#4f46e5]/50 group-active:scale-110 text-xl text-dark-title duration-150 md:duration-300 overflow-hidden">
+                  <i class="fa-brands fa-css3-alt"></i>
+                </div>
+                <h4 class="text-xl font-semibold text-title dark:text-dark-title mb-2">CSS</h4>
+                <p class="text-sm text-texte-secondaire dark:text-dark-texte-secondaire">Interfaces responsives,
+                  animations CSS et
+                  transition pour offrir une expérience utilisateur fluide sur tous les écrans.</p>
+                <span
+                  class="mt-5 inline-flex rounded-full bg-indigo-100 text-indigo-700 px-3 py-1 text-xs font-semibold dark:bg-indigo-900/30 dark:text-indigo-200">UI
+                  professionnelle</span>
+              </div>
             </article>
+
+
 
             <article
               class="group show-fade-up overflow-hidden rounded-3xl border border-gray-300 dark:border-dark-header-border bg-card dark:bg-dark-card p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition duration-150 md:duration-300 hover:-translate-y-2 active:-translate-y-2 hover:shadow-[0_25px_90px_#4f46e5]/10 active:shadow-[0_25px_90px_#4f46e5]/10">
@@ -476,11 +589,12 @@
                 </svg>
               </div>
               <h4 class="text-xl font-semibold text-title dark:text-dark-title mb-2">Tailwind CSS</h4>
-              <p class="text-sm text-texte-secondaire dark:text-dark-texte-secondaire">Développement rapide d’interfaces
-                stylées, modulaires et faciles à maintenir grâce à Tailwind.</p>
+              <p class="text-sm text-texte-secondaire dark:text-dark-texte-secondaire">j'utilise Tailwind CSS pour le
+                développement rapide d’interfaces
+                modernes, réutilisables et faciles à maintenir grâce aux classes utilitaires.</p>
               <span
-                class="mt-5 inline-flex rounded-full bg-indigo-100 text-indigo-700 px-3 py-1 text-xs font-semibold dark:bg-indigo-900/30 dark:text-indigo-200">Design
-                scalable</span>
+                class="mt-5 inline-flex rounded-full bg-indigo-100 text-indigo-700 px-3 py-1 text-xs font-semibold dark:bg-indigo-900/30 dark:text-indigo-200">UI
+                moderne</span>
             </article>
 
             <article
@@ -490,10 +604,11 @@
                 <i class="bi bi-braces"></i>
               </div>
               <h4 class="text-xl font-semibold text-title dark:text-dark-title mb-2">JavaScript</h4>
-              <p class="text-sm text-texte-secondaire dark:text-dark-texte-secondaire">Interactions, animations et
-                logique client pour rendre vos pages vivantes et engageantes.</p>
+              <p class="text-sm text-texte-secondaire dark:text-dark-texte-secondaire">Je développe des interactions
+                dynamiques avec JavaScript: menus interactifs, thèmes clair/sombre et animations fluides.</p>
               <span
-                class="mt-5 inline-flex rounded-full bg-indigo-100 text-indigo-700 px-3 py-1 text-xs font-semibold dark:bg-indigo-900/30 dark:text-indigo-200">Interactive</span>
+                class="mt-5 inline-flex rounded-full bg-indigo-100 text-indigo-700 px-3 py-1 text-xs font-semibold dark:bg-indigo-900/30 dark:text-indigo-200">DOM
+                et Interactivité</span>
             </article>
           </div>
 
@@ -575,7 +690,7 @@
                 <a href="mailto:contact@monportfolio.com"
                   class="inline-flex items-center justify-center rounded-2xl bg-principal px-4 py-3 text-sm font-semibold text-white transition hover:bg-hover-principal">Envoyer
                   un email</a>
-                <a href="./public/resume.pdf" download=""
+                <a href="./resume.pdf" download="resume.pdf" aria-label="Télécharger CV"
                   class="inline-flex items-center justify-center rounded-2xl border border-indigo-300 bg-transparent px-4 py-3 text-sm font-semibold text-title dark:text-dark-title transition hover:bg-slate-100 dark:hover:bg-slate-900">Télécharger
                   mon CV</a>
               </div>

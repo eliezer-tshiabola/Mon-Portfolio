@@ -240,6 +240,8 @@ const showFadeLeft = document.querySelectorAll('.show-fade-left');
 const showFadeRight = document.querySelectorAll('.show-fade-right');
 const showFadeUp = document.querySelectorAll('.show-fade-up');
 const showFadeDown = document.querySelectorAll('.show-fade-down');
+const showFadeIn = document.querySelectorAll('.show-fade-in');
+const showFadeOut = document.querySelectorAll('.show-fade-out');
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -255,6 +257,12 @@ const observer = new IntersectionObserver(entries => {
             }
             if (entry.target.classList.contains('show-fade-down')) {
                 entry.target.classList.add('show-down');
+            }
+            if (entry.target.classList.contains('show-fade-in')) {
+                entry.target.classList.add('show-in');
+            }
+            if (entry.target.classList.contains('show-fade-out')) {
+                entry.target.classList.add('show-out');
             }
         }
     });
@@ -273,4 +281,49 @@ const observer = new IntersectionObserver(entries => {
 });
 [...showFadeDown].forEach(scrollDown => {
     observer.observe(scrollDown);
+});
+[...showFadeIn].forEach(scrollIn => {
+    observer.observe(scrollIn);
+});
+[...showFadeOut].forEach(scrollOut => {
+    observer.observe(scrollOut);
+});
+
+
+// ========= POPUP COMPETENCE CARD ========== //
+const competencePopupCard = document.querySelectorAll('.competence-popup-card');
+const competencePopupContainer = document.querySelectorAll('.competence-popup-container');
+const openPopupCard = document.querySelectorAll('.open-popup-card');
+const closePopupCard = document.querySelectorAll('.close-popup-card');
+
+// ==== Ouverture de la carte ===== //
+openPopupCard.forEach(openedCard => {
+    openedCard.addEventListener('click', () => {
+        competencePopupCard.forEach(competenceCard => {
+            competenceCard.classList.replace('-z-20', 'z-20');
+            competenceCard.classList.replace('opacity-0', 'opacity-100');
+        });
+
+        competencePopupContainer.forEach(competenceContainer => {
+            competenceContainer.classList.replace('animate-fade-out', 'animate-fade-in');
+            competenceContainer.classList.replace('-z-20', 'z-20');
+            competenceContainer.classList.replace('opacity-0', 'opacity-100');
+        });
+    });
+});
+
+// ==== Fermeture de la carte ===== //
+closePopupCard.forEach(closedCard => {
+    closedCard.addEventListener('click', () => {
+        competencePopupCard.forEach(competenceCard => {
+            competenceCard.classList.replace('z-20', '-z-20');
+            competenceCard.classList.replace('opacity-100', 'opacity-0');
+        });
+
+        competencePopupContainer.forEach(competenceContainer => {
+            competenceContainer.classList.replace('animate-fade-in', 'animate-fade-out')
+            competenceContainer.classList.replace('z-20', '-z-20')
+            competenceContainer.classList.replace('opacity-100', 'opacity-0')
+        });
+    });
 });

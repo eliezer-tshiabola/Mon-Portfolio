@@ -48,6 +48,18 @@
     }
   }
 
+  --animate-card-fade-right: fade-right 0.3s ease-out;
+  @keyframes fade-right {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   --animate-fade-left: fade-left 0.9s ease-out;
   @keyframes fade-left {
     from {
@@ -86,11 +98,36 @@
 
   --animate-bound-slow: bound 1.5s ease-out infinite;
   @keyframes bound {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0);
     }
     50% {
       transform: translateY(-10px);
+    }
+  }
+
+  --animate-fade-in: fade-in 0.3s ease-in-out;
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      scale: 0.8;
+    }
+    to {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  --animate-fade-out: fade-out 0.1s ease-in;
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+      scale: 1;
+    }
+    to {
+      opacity: 0;
+      scale: 0.95;
     }
   }
 }
@@ -146,6 +183,24 @@
 
   .show-down {
     animation: fade-down 0.9s ease-out forwards;
+  }
+
+  .show-fade-in {
+    opacity: 0;
+    scale: 0.9;
+  }
+
+  .show-in {
+    animation: fade-in 0.3s ease-in forwards;
+  }
+
+  .show-fade-out {
+    opacity: 1;
+    scale: 1;
+  }
+
+  .show-out {
+    animation: fade-out 0.3s ease-in forwards;
   }
 
   .flex-center {
